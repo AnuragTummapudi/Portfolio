@@ -1,11 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useTheme } from "next-themes";
 import type { Activity } from "react-github-calendar";
 import { githubUsername } from "@/data/portfolio";
 
 const calendarTheme = {
-  light: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+  light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
   dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
 };
 
@@ -18,11 +19,14 @@ const GitHubCalendar = dynamic(
 );
 
 export function GithubActivity() {
+  const { resolvedTheme } = useTheme();
+  const colorScheme = resolvedTheme === "light" ? "light" : "dark";
+
   return (
     <div className="heatmap-scroll overflow-x-auto pb-2">
       <GitHubCalendar
         username={githubUsername}
-        colorScheme="dark"
+        colorScheme={colorScheme}
         theme={calendarTheme}
         transformData={emphasizeContributionLevels}
         blockSize={11}
