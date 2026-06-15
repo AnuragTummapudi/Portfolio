@@ -1,11 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import type { Activity } from "react-github-calendar";
 import { githubUsername } from "@/data/portfolio";
 
 const calendarTheme = {
-  light: ["#ffffff", "#d7f5dd", "#8fdc9e", "#42b45b", "#207a35"],
-  dark: ["#ffffff", "#d7f5dd", "#8fdc9e", "#42b45b", "#207a35"],
+  light: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+  dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
 };
 
 const GitHubCalendar = dynamic(
@@ -21,8 +22,9 @@ export function GithubActivity() {
     <div className="heatmap-scroll overflow-x-auto pb-2">
       <GitHubCalendar
         username={githubUsername}
-        colorScheme="light"
+        colorScheme="dark"
         theme={calendarTheme}
+        transformData={emphasizeContributionLevels}
         blockSize={11}
         blockMargin={4}
         blockRadius={3}
@@ -38,6 +40,19 @@ export function GithubActivity() {
       />
     </div>
   );
+}
+
+function emphasizeContributionLevels(data: Activity[]) {
+  return data.map((activity) => {
+    if (activity.count === 0) {
+      return activity;
+    }
+
+    return {
+      ...activity,
+      level: Math.max(activity.level, 2) as Activity["level"],
+    };
+  });
 }
 
 function CalendarSkeleton() {
