@@ -94,6 +94,13 @@ a {
   color: var(--foreground);
 }
 
+.brand-wordmark {
+  font-family: var(--font-geist-mono), "IBM Plex Mono", "JetBrains Mono",
+    "SFMono-Regular", Consolas, monospace;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
 .kbd {
   display: inline-flex;
   min-width: 1.15rem;

@@ -25,7 +25,7 @@ export function HeroProfile() {
 
         <div className="min-w-0 flex-1 space-y-2">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-            <h1 className="flex flex-wrap items-center gap-2 font-mono text-[31px] font-semibold leading-none tracking-[-0.05em] text-foreground sm:text-[33px]">
+            <h1 className="brand-wordmark flex flex-wrap items-center gap-2 text-[31px] leading-none text-foreground sm:text-[33px]">
               <span>{profile.name}</span>
               <VerifiedBadge />
             </h1>
