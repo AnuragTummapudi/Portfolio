@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const ROLE_PREFIX = "20 · ";
+const ROLE_PREFIX = "18 · ";
 const ROLES = [
   "AI Engineer",
   "SDE (Software Development Engineer)",

@@ -86,7 +86,7 @@ export type CommandItem = {
 export const profile = {
   name: "Anurag Tummapudi",
   initials: "AT",
-  meta: "20 · AI Engineer",
+  meta: "18 · AI Engineer",
   location: "India",
   focus: "Real-time voice agents, GenAI systems, and agentic workflows",
 };
