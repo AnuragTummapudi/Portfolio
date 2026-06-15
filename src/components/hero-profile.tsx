@@ -1,7 +1,6 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import avatarDarkImage from "../../anurag-anime.png";
-import avatarImage from "../../Anurag Tummapudi.jpeg";
+import avatarImage from "../../anurag-anime.png";
 import { GridIntersections } from "@/components/grid-intersections";
 import { RotatingRoleText } from "@/components/rotating-role-text";
 import { profile } from "@/data/portfolio";
@@ -15,19 +14,11 @@ export function HeroProfile() {
           <div className="avatar-inner">
             <Image
               src={avatarImage}
-              alt="Anurag Tummapudi"
-              className="avatar-theme-image avatar-light-image h-full w-full object-cover"
-              priority
-              sizes="116px"
-              placeholder="blur"
-            />
-            <Image
-              src={avatarDarkImage}
               alt="Anurag Tummapudi anime portrait"
-              className="avatar-theme-image avatar-dark-image h-full w-full object-cover"
               priority
               sizes="116px"
               placeholder="blur"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>

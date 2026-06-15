@@ -284,27 +284,6 @@ a {
   color: var(--foreground);
 }
 
-.avatar-theme-image {
-  grid-area: 1 / 1;
-  transition: opacity 180ms ease;
-}
-
-.dark .avatar-light-image {
-  opacity: 0;
-}
-
-.dark .avatar-dark-image {
-  opacity: 1;
-}
-
-html:not(.dark) .avatar-light-image {
-  opacity: 1;
-}
-
-html:not(.dark) .avatar-dark-image {
-  opacity: 0;
-}
-
 .avatar-inner span {
   display: inline-flex;
   align-items: center;
